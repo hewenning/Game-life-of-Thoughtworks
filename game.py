@@ -1,6 +1,6 @@
 # 导入所需要的包
 import pygame
-clock = time.Clock()
+clock = pygame.time.Clock()
 
 def game(info):
     import time, pygame
@@ -13,7 +13,7 @@ def game(info):
     pygame.init()
 
     # 设置窗口大小
-    main_window = pygame.display.set_mode(info['window_size'], RESIZABLE)
+    main_window = pygame.display.set_mode(info['window_size'], pygame.RESIZABLE)
     game_window = pygame.Surface((info['game_size'],) * 2)
 
     running = 0
@@ -73,11 +73,12 @@ def game(info):
         if k[pygame.K_DOWN]: speed -= dt
         speed = max(speed, 0)
 
-        # Add the game window to the main and show
+        # 显示游戏窗口
         main_window.fill((10, 10, 10))
         main_window.blit(game_window, (
         (info['window_size'][0] - info['game_size']) / 2, (info['window_size'][1] - info['game_size']) / 2))
-        # show_messages(main_window, info, messages)
+
+        # 不断更新信息
         pygame.display.update()
 
 
