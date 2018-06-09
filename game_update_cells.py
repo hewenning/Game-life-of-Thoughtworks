@@ -1,4 +1,8 @@
+# -*- coding: utf-8 -*-
 # 更新细胞位置
+from game_cell_plot import PlotCell
+
+
 class UpdateCells:
     def update_cells(info, cell):
         copy = list(cell)

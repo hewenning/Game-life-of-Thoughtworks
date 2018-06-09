@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # 生命游戏的设置菜单
 info = {
     'window_size': (500, 300),

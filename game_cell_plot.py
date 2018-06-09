@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # 该类用于绘制细胞
 class PlotCell():
     def plot_cell(size):

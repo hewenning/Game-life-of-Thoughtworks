@@ -1,5 +1,8 @@
+# -*- coding: utf-8 -*-
 # 该类用于将细胞计算结果显示出来
 from pygame import draw
+
+from game_cell_plot import PlotCell
 
 
 class ShowCells:

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # 该类用来显示游戏信息
 from pygame import font
 

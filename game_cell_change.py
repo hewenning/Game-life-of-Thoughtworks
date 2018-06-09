@@ -1,5 +1,8 @@
+# -*- coding: utf-8 -*-
 # 该类用于检测鼠标动作，计算细胞的改变
 from pygame import mouse
+
+from game_cell_plot import PlotCell
 
 
 class ChangeCell:

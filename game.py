@@ -1,13 +1,22 @@
+# -*- coding: utf-8 -*-
 # 导入所需要的包
 import pygame
+
+from game_cell_change import ChangeCell
+from game_cell_plot import PlotCell
+from game_settings import info
+from game_show_cells import ShowCells
+from game_update_cells import UpdateCells
+
 clock = pygame.time.Clock()
+
 
 def game(info):
     import time, pygame
 
     # 在info中添加游戏区域的大小（而不是窗口大小）
     info['game_size'] = int(min(info['window_size']))
-    grid = PlotCell.plot_cell(info['cell_size'])
+    cell = PlotCell.plot_cell(info['cell_size'])
 
     global clock
     pygame.init()
@@ -42,16 +51,16 @@ def game(info):
                     running = abs(running - 1)
 
                 if e.key == pygame.K_SPACE:
-                    grid = UpdateCells.update_cells(info, grid)
+                    cell = UpdateCells.update_cells(info, cell)
                     last_time = time.time()
 
                 if e.key == pygame.K_c:
-                    grid = PlotCell.plot_cell(info['grid_size'])
+                    cell = PlotCell.plot_cell(info['grid_size'])
 
         game_window.fill(info['background'])
 
-        cell = ChangeCell.change_cells(grid, info)
-        ShowCells.show_cells(game_window, grid, info)
+        cell = ChangeCell.change_cells(cell, info)
+        ShowCells.show_cells(game_window, cell, info)
 
         pygame.display.set_caption(str(t))
         dt = clock.tick() / 1000
@@ -59,7 +68,7 @@ def game(info):
         if running:
             t += dt * speed * 10
             if t > 1:
-                grid = UpdateCells.update_cells(info, grid)
+                cell = UpdateCells.update_cells(info, cell)
                 t -= 1
                 last_time = time.time()
 
