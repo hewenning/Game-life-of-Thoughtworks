@@ -1,6 +1,4 @@
 # 生命游戏的设置菜单
-import time
-
 info = {
     'window_size': (500, 300),
     'cell_size': 100,
