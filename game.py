@@ -1,3 +1,4 @@
+# import moudle
 from pygame import *
 
 clock = time.Clock()
