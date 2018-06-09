@@ -2,8 +2,7 @@
 from pygame import mouse
 
 
-
-class ChangeCell():
+class ChangeCell:
     def change_cell(cell, info):
 
         # 检测鼠标动作

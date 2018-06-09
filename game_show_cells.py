@@ -2,7 +2,7 @@
 from pygame import draw
 
 
-class ShowCells():
+class ShowCells:
     def show_cells(window, cell, info):
 
         game_scale = info['game_size'] / info['grid_size']

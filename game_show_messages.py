@@ -2,7 +2,7 @@
 from pygame import font
 
 
-class ShowMessages():
+class ShowMessages:
     def show_messages(window, info, messages):
 
         max_height = 30
